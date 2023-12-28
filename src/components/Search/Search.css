@@ -1,0 +1,9 @@
+.search-wrapper{
+    width: 500px;
+    
+}
+#pokedex-name-search{
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+}
