@@ -21,7 +21,7 @@ function PokemonList() {
         const pokemonResultPromise = pokemonResults.map((pokemon) => axios.get(pokemon.url));
         //pasing the promis to axios.all 
         const pokemonData = await axios.all(pokemonResultPromise); // array of 20 pokemons details data
-        console.log(pokemonData);
+        // console.log(pokemonData);
         //now iterate on the data of each pokemon, and extract id, name, image, types
         const pokeListResult = pokemonData.map((pokeData) => {
             const pokemon = pokeData.data;
@@ -29,6 +29,7 @@ function PokemonList() {
                 id: pokemon.id,
                 name: pokemon.name,
                  image: (pokemon.sprites.other) ? pokemon.sprites.other.dream_world.front_default : pokemon.sprite.front_default,
+                // image: (pokemon.sprites) ? pokemon.sprites.back_default : pokemon.species.url,
                  types: pokemon.types
                 }
         })
@@ -46,7 +47,7 @@ function PokemonList() {
                 <div className="list">Pokemon List</div>
                 <div className="pokemon-wrapper">
                 {(isLoading) ? 'Loading...':
-                    pokemonList.map((p) => <Pokemon  name={p.name} image={p.image} key={p.id}/>)
+                    pokemonList.map((p) => <Pokemon  name={p.name} image={p.image} key={p.id} id={p.id}/>)
                 }
                 </div>
                 

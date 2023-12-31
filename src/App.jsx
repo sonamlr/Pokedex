@@ -1,15 +1,14 @@
-import { useState } from 'react'
 import './App.css'
-import Pokedex from './components/Pokedex/Pokedex'
-import PokemonList from './components/PokemonList/PokemonList'
+import CustomeRoutes from './routes/CustomeRoutes'
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <>
-      <Pokedex />
-      <PokemonList />
+     <h1 className="pokedex-heading">Pokedex</h1>
+      <CustomeRoutes />
+   
     </>
   )
 }
